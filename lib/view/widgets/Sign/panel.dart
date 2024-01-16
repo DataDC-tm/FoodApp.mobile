@@ -4,7 +4,7 @@ import 'package:food_app/view/widgets/Sign/button.dart';
 import 'package:get/get.dart';
 
 import '../../../constant/dimens.dart';
-import '../../theme/styles/sign_srtyle.dart';
+import '../../theme/styles/sign_style.dart';
 
 class SignPanel extends StatelessWidget {
   SignPanel({

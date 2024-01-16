@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../../../constant/dimens.dart';
 import '../../../gen/assets.gen.dart';
-import '../../theme/styles/sign_srtyle.dart';
+import '../../theme/styles/sign_style.dart';
 import '../../widgets/Sign/panel.dart';
 import '../../widgets/input.dart';
 
@@ -20,6 +20,8 @@ class VerifyScreen extends StatelessWidget {
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Container(
+                      height: Get.height,
+
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(Assets.images.png.sign.background.path),

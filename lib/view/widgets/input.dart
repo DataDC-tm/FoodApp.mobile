@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../constant/dimens.dart';
 import '../theme/colors/general_colors.dart';
-import '../theme/styles/sign_srtyle.dart';
+import '../theme/styles/sign_style.dart';
 
 class SignTextField extends StatelessWidget {
   SignTextField({
