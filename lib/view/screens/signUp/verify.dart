@@ -14,45 +14,43 @@ class VerifyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Container(
-                      height: Get.height,
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Container(
+                    height: Get.height,
 
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(Assets.images.png.sign.background.path),
-                fit: BoxFit.fill,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(Assets.images.png.sign.background.path),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              (Dimens.large * 14).height,
+              //panel register
+              SignPanel(
+                title: 'تایید کد',
+                //TODO: inja bayad vared HomePage beshe
+                onPress: (){},
+                child: [
+                  //input for enter last * first name
+                  SignTextField(hint: 'کد تایید'),
+                  (Dimens.large + 10).height,
+                ],
               ),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                (Dimens.large * 14).height,
-                //panel register
-                SignPanel(
-                  title: 'تایید کد',
-                  //TODO: inja bayad vared HomePage beshe
-                  onPress: (){},
-                  child: [
-                    //input for enter last * first name
-                    SignTextField(hint: 'کد تایید'),
-                    (Dimens.large + 10).height,
-                  ],
+              (Get.height / 7).height,
+              TextButton(
+                onPressed: () => Get.offAll(() => const RegisterScreen()),
+                child: Text(
+                  'بازگشت به صفحه ثبت نام',
+                  style: SignStyle.textForNextPage,
                 ),
-                (Get.height / 7).height,
-                TextButton(
-                  onPressed: () => Get.offAll(() => const RegisterScreen()),
-                  child: Text(
-                    'بازگشت به صفحه ثبت نام',
-                    style: SignStyle.textForNextPage,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

@@ -46,7 +46,7 @@ class RegisterScreen extends StatelessWidget {
               ),
               (Get.height / 7).height,
               TextButton(
-                onPressed: () => Get.to(() => const LoginScreen()),
+                onPressed: () => Get.offAll(() => const LoginScreen()),
                 child: Text(
                   'صفحه ورود / بعدا وارد میشم',
                   style: SignStyle.textForNextPage,

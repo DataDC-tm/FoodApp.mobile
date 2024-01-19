@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
               SignPanel(
                 title: 'ورود',
                 //TODO: bayad vared app beshe
-                onPress: () => Get.to(() => const VerifyScreen()),
+                onPress: () => Get.offAll(() => const VerifyScreen()),
                 child: [
                   //input for enter last * first name
                   SignTextField(hint: 'تلفن همراه'),
@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
               ),
               (Get.height / 7).height,
               TextButton(
-                onPressed: () => Get.to(() => const RegisterScreen()),
+                onPressed: () => Get.offAll(() => const RegisterScreen()),
                 child: Text(
                   'صفحه ثبت نام / بعدا وارد میشم',
                   style: SignStyle.textForNextPage,
