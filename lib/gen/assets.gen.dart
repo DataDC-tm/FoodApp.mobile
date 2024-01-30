@@ -13,12 +13,59 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
+  $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
 class $AssetsImagesPngGen {
   const $AssetsImagesPngGen();
 
+  /// File path: assets/images/png/defult_off_cart.png
+  AssetGenImage get defultOffCart =>
+      const AssetGenImage('assets/images/png/defult_off_cart.png');
+
+  $AssetsImagesPngHomeGen get home => const $AssetsImagesPngHomeGen();
   $AssetsImagesPngSignGen get sign => const $AssetsImagesPngSignGen();
+
+  /// List of all assets
+  List<AssetGenImage> get values => [defultOffCart];
+}
+
+class $AssetsImagesSvgGen {
+  const $AssetsImagesSvgGen();
+
+  /// File path: assets/images/svg/basket.svg
+  String get basket => 'assets/images/svg/basket.svg';
+
+  /// File path: assets/images/svg/defult_bg_off_market.svg
+  String get defaultBgOffMarket => 'assets/images/svg/defult_bg_off_market.svg';
+
+  /// File path: assets/images/svg/menu.svg
+  String get menu => 'assets/images/svg/menu.svg';
+
+  /// File path: assets/images/svg/slider.svg
+  String get slider => 'assets/images/svg/slider.svg';
+
+  /// List of all assets
+  List<String> get values => [basket, defaultBgOffMarket, menu, slider];
+}
+
+class $AssetsImagesPngHomeGen {
+  const $AssetsImagesPngHomeGen();
+
+  /// File path: assets/images/png/home/Rectangle.png
+  AssetGenImage get rectangle =>
+      const AssetGenImage('assets/images/png/home/Rectangle.png');
+
+  /// File path: assets/images/png/home/backSlider.png
+  AssetGenImage get backSlider =>
+      const AssetGenImage('assets/images/png/home/backSlider.png');
+
+  /// File path: assets/images/png/home/category_item.png
+  AssetGenImage get categoryItem =>
+      const AssetGenImage('assets/images/png/home/category_item.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [rectangle, backSlider, categoryItem];
 }
 
 class $AssetsImagesPngSignGen {

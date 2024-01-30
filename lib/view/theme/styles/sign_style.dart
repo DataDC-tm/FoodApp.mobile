@@ -10,7 +10,7 @@ class SignStyle {
   );
   static TextStyle hint = TextStyle(
     fontSize: Get.height / 60,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
     fontFamily: 'vazir_medium',
     color: GeneralColors.hint,
   );

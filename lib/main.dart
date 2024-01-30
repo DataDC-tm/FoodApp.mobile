@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:food_app/view/screens/mainScreen/home_page.dart';
 import 'package:food_app/view/screens/signUp/login_screen.dart';
-import 'package:food_app/view/screens/signUp/register_screen.dart';
-import 'package:food_app/view/screens/signUp/verify.dart';
+import 'package:food_app/view/theme/colors/general_colors.dart';
+import 'package:food_app/view/theme/shadows.dart';
+
 import 'package:get/get.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    systemNavigationBarColor: Colors.transparent,
+    statusBarColor: GeneralColors.backgroundPrimary,
+    systemNavigationBarColor: GeneralColors.backgroundPrimary,
     systemNavigationBarDividerColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.dark
+    systemNavigationBarIconBrightness: Brightness.dark,
+    statusBarIconBrightness: Brightness.dark,
   ));
+
   runApp(const MyApp());
 }
 
@@ -22,14 +26,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
       locale: const Locale('fa', 'IR'),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        primaryColor: GeneralColors.primary,
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
+      home:  HomePage(),
     );
   }
 }
