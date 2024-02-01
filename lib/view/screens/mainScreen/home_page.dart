@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.all(Dimens.bodyMargin),
           child: const SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 HomeSlider(),

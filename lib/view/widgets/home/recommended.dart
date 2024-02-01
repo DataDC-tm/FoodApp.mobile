@@ -22,7 +22,7 @@ class RecommendedFood extends StatelessWidget {
         width: Get.width / 2,
         height: Get.height,
         child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
+          physics: const ClampingScrollPhysics(),
           itemCount: 10,
           itemBuilder: (context, index) {
             //Cart food
@@ -35,74 +35,73 @@ class RecommendedFood extends StatelessWidget {
                 color: HomeColors.backgroundRecommendedDishes,
                 borderRadius: BorderRadius.all(Radius.circular(Dimens.small)),
               ),
-              child: Row(
-                children: [
-                  //image food
-                  Flexible(
-                    child: ClipRRect(
+              child: FittedBox(
+                child: Row(
+                  children: [
+                    //image food
+                    ClipRRect(
                       child: Image.asset(
                         Assets.images.png.home.rectangle.path,
                       ),
-                    ),
-                  ), //title
-
-                  Padding(
-                    padding: EdgeInsets.only(
-                      right: Dimens.small,
-                      top: Dimens.small,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        //title
-                        const Text(
-                          'میکس سنتی',
-                          style: GeneralStyle.hintStyle,
-                        ),
-                        Dimens.small.height,
-                        //description
-                        const Text(
-                          '''این پیشنهاد خوشمزه سان دی رو نادیده نگیرین!
+                    ), //title
+              
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: Dimens.small,
+                        top: Dimens.small,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          //title
+                           Text(
+                            'میکس سنتی',
+                            style: HomeStyle.recommendedTitle,
+                          ),
+                          Dimens.small.height,
+                          //description
+                           Text(
+                            '''این پیشنهاد خوشمزه سان دی رو نادیده نگیرین!
 میکس چنجه ، کباب گوشت 200 گرمی ،
 جوجه کباب طعم دار شده
 و مخلفات + نان داغ و روغن کباب''',
-                          style: HomeStyle.descriptionRecommendedDishes,
-                          softWrap: true,
-                          overflow: TextOverflow.clip,
-                          textAlign: TextAlign.justify,
-                          maxLines: 3,
-                        ),
-                        //button for buy product
-                        Container(
-                          width: Get.width / 6,
-                          height: Get.height / 30,
-                          margin: EdgeInsets.only(
-                              top: Dimens.large * 2.8,
-                              right: Dimens.large * 7.1),
-                          decoration: BoxDecoration(
-                            color: GeneralColors.primary,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(Dimens.large)),
+                            style: HomeStyle.descriptionRecommendedDishes,
+                            softWrap: true,
+                            overflow: TextOverflow.clip,
+                            textAlign: TextAlign.justify,
+                            maxLines: 3,
                           ),
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            style: const ButtonStyle(
-                              padding:
-                                  MaterialStatePropertyAll(EdgeInsets.zero),
-                              elevation: MaterialStatePropertyAll(0.0),
-                              backgroundColor:
-                                  MaterialStatePropertyAll(Colors.transparent),
+                          Dimens.large.height,
+                          //button for buy product
+                          Container(
+                            width: Get.width / 6,
+                            height: Get.height / 30,
+                            margin:  EdgeInsets.only(right: Get.width / 2.6),
+                            decoration: BoxDecoration(
+                              color: GeneralColors.primary,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(Dimens.large)),
                             ),
-                            child: Text(
-                              'مشاهده',
-                              style: GeneralStyle.button.copyWith(fontSize: 10),
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: const ButtonStyle(
+                                padding:
+                                    MaterialStatePropertyAll(EdgeInsets.zero),
+                                elevation: MaterialStatePropertyAll(0.0),
+                                backgroundColor:
+                                    MaterialStatePropertyAll(Colors.transparent),
+                              ),
+                              child: Text(
+                                'مشاهده',
+                                style: GeneralStyle.button.copyWith(fontSize: 10),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             );
           },

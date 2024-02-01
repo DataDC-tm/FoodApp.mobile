@@ -37,7 +37,7 @@ class $AssetsImagesSvgGen {
   String get basket => 'assets/images/svg/basket.svg';
 
   /// File path: assets/images/svg/defult_bg_off_market.svg
-  String get defaultBgOffMarket => 'assets/images/svg/defult_bg_off_market.svg';
+  String get defultBgOffMarket => 'assets/images/svg/defult_bg_off_market.svg';
 
   /// File path: assets/images/svg/menu.svg
   String get menu => 'assets/images/svg/menu.svg';
@@ -46,7 +46,7 @@ class $AssetsImagesSvgGen {
   String get slider => 'assets/images/svg/slider.svg';
 
   /// List of all assets
-  List<String> get values => [basket, defaultBgOffMarket, menu, slider];
+  List<String> get values => [basket, defultBgOffMarket, menu, slider];
 }
 
 class $AssetsImagesPngHomeGen {
@@ -60,12 +60,17 @@ class $AssetsImagesPngHomeGen {
   AssetGenImage get backSlider =>
       const AssetGenImage('assets/images/png/home/backSlider.png');
 
+  /// File path: assets/images/png/home/category_bg.png
+  AssetGenImage get categoryBg =>
+      const AssetGenImage('assets/images/png/home/category_bg.png');
+
   /// File path: assets/images/png/home/category_item.png
   AssetGenImage get categoryItem =>
       const AssetGenImage('assets/images/png/home/category_item.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [rectangle, backSlider, categoryItem];
+  List<AssetGenImage> get values =>
+      [rectangle, backSlider, categoryBg, categoryItem];
 }
 
 class $AssetsImagesPngSignGen {

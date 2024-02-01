@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/view/screens/mainScreen/home_page.dart';
 import 'package:food_app/view/screens/signUp/login_screen.dart';
 import 'package:food_app/view/theme/colors/general_colors.dart';
@@ -25,15 +26,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      locale: const Locale('fa', 'IR'),
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-        primaryColor: GeneralColors.primary,
-        useMaterial3: true,
-      ),
-      home:  HomePage(),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(720, 1280),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        // Use builder only if you need to use library outside ScreenUtilInit context
+        builder: (_, child) {
+          return GetMaterialApp(
+            locale: const Locale('fa', 'IR'),
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+              primaryColor: GeneralColors.primary,
+              useMaterial3: true,
+            ),
+            home: HomePage(),
+          );
+        });
   }
 }

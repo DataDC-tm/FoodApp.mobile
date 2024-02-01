@@ -3,6 +3,7 @@ import 'package:food_app/view/theme/colors/general_colors.dart';
 import 'package:get/get.dart';
 
 class SignStyle {
+  SignStyle._();
   static TextStyle title = TextStyle(
     fontSize: Get.height / 26,
     fontWeight: FontWeight.w800,

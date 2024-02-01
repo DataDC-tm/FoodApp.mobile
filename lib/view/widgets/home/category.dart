@@ -9,6 +9,7 @@ import '../../theme/styles/home_style.dart';
 import '../General/background_widget.dart';
 
 class HomeCategory extends StatelessWidget {
+  const HomeCategory._();
   const HomeCategory({
     super.key,
   });
@@ -21,39 +22,25 @@ class HomeCategory extends StatelessWidget {
         height: Get.height / 12,
         child: ListView.builder(
           itemCount: 4,
-          cacheExtent: Get.width,
           itemExtent: Get.width / 5.38,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return AspectRatio(
-              aspectRatio: 1.0,
-              child: Container(
-                margin: EdgeInsets.only(right: Dimens.small / 1.5),
-                padding: EdgeInsets.all(Dimens.small / 2),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        Assets.images.png.home.categoryItem.path),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.all(
-                      Radius.circular(Dimens.small)),
+            return Container(
+              margin: EdgeInsets.only(right: Dimens.small / 1.5),
+              padding: EdgeInsets.all(Dimens.small / 2),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      Assets.images.png.home.categoryBg.path),
+                  fit: BoxFit.cover,
                 ),
-                child: Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                          color: GeneralColors.primary, width: 2),
-                      borderRadius: BorderRadius.all(
-                          Radius.circular(Dimens.small / 2)),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'قست فود',
-                        style: HomeStyle.categoryTitle,
-                      ),
-                    ),
-                  ),
+                borderRadius: BorderRadius.all(
+                    Radius.circular(Dimens.small)),
+              ),
+              child: Center(
+                child: Text(
+                  'فست فود',
+                  style: HomeStyle.categoryTitle,
                 ),
               ),
             );

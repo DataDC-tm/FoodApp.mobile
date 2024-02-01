@@ -8,11 +8,9 @@ class GeneralColors {
 
 class GradientColors {
   // ignore: prefer_const_constructors
-  static LinearGradient boxPrice = LinearGradient(
-      begin: Alignment.centerRight,
-      end: Alignment.centerLeft,
-      colors: [
-        Colors.white,
-        Colors.transparent,
-      ]);
+  static const LinearGradient boxPrice = LinearGradient(
+    begin: Alignment.centerRight,
+    end: Alignment.centerLeft,
+    colors: [Colors.white,Color(0xFFFDAB21)],
+  );
 }

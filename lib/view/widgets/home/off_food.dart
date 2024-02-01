@@ -9,6 +9,7 @@ import '../../theme/colors/general_colors.dart';
 import '../../theme/shadows.dart';
 import '../../theme/styles/home_style.dart';
 import '../General/background_widget.dart';
+
 //TODO: Box Price Moshkel dare sizesh va widget roye background kol safhe ro nemigire
 class HomeOffFood extends StatelessWidget {
   const HomeOffFood({
@@ -19,7 +20,7 @@ class HomeOffFood extends StatelessWidget {
   Widget build(BuildContext context) {
     return BoxBg(
       child: Container(
-        height: Get.height / 4,
+        height: Get.height / 3.7,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(Assets.images.png.home.backSlider.path),
@@ -28,68 +29,47 @@ class HomeOffFood extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            //background
-            Positioned.fill(
-              child: SvgPicture.asset(
-                Assets.images.svg.defaultBgOffMarket,
-                fit: BoxFit.fill,
-              ),
-            ),
-            //
+            //cart product(food)
             Positioned(
-              top: Get.height / 80,
-              left: Get.width / 20,
+              top: Get.height / 17,
+              left: Get.width / 25,
               child: Container(
-                width: Get.width / 3,
-                height: Get.height / 5,
-                child: Stack(
+                width: Get.width / 3.2,
+                height: Get.height / 5.2,
+                decoration: BoxDecoration(
+                    color: GeneralColors.backgroundPrimary,
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(Get.width / 40))),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    //cart
-                    Positioned(
-                      top: Get.height / 20,
-                      left: 0,
-                      child: Container(
-                        width: Get.width / 3.5,
-                        height: Get.height / 5.5,
-                        color: GeneralColors.backgroundPrimary,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Dimens.small.height,
-
-                            //title
-                            const Text(
-                              'ماهی کبابی',
-                              style: HomeStyle.off,
-                            ),
-                            Dimens.small.height,
-
-                            //stars
-                            const _Stars(),
-                            (Dimens.small /2).height,
-                            //prices
-                            const _BoxPrice(),
-                          ],
-                        ),
-                      ),
+                    Dimens.small.height,
+                    //title\name product(food)
+                    Text(
+                      'خوراک دریایی آبپز',
+                      style: HomeStyle.offTitle,
                     ),
-                    //image food in top cart
-                    Positioned(
-                      top: 0,
-                      left: Get.width / 18,
-                      child: Container(
-                        width: Get.width / 5.5,
-                        decoration: ShapeDecoration(
-                          color: const Color(0xFFFDAB21),
-                          shape: const OvalBorder(),
-                          shadows: GeneralShadow.radiance,
-                        ),
-                        child:
-                            Image.asset(Assets.images.png.defultOffCart.path),
-                      ),
-                    ),
+                    Dimens.small.height,
+                    //stars
+                    const _Stars(),
+                    (Dimens.small).height,
+                    //prices
+                    const _BoxPrice(),
                   ],
                 ),
+              ),
+            ),
+            //image food in top cart
+            Positioned(
+              left: Get.width / 9.5,
+              child: Container(
+                width: Get.width / 5.5,
+                decoration: const ShapeDecoration(
+                  color: Color(0xFFFDAB21),
+                  shape: OvalBorder(),
+                  shadows: GeneralShadow.radiance,
+                ),
+                child: Image.asset(Assets.images.png.defultOffCart.path),
               ),
             ),
           ],
@@ -100,60 +80,58 @@ class HomeOffFood extends StatelessWidget {
 }
 
 class _BoxPrice extends StatelessWidget {
-  const _BoxPrice({
-    super.key,
-  });
+  const _BoxPrice();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: Get.height / 35,
-      padding: EdgeInsets.symmetric(horizontal: Get.width / 30),
+      height: Get.height / 22,
       color: GeneralColors.primary,
-      child: FittedBox(
-        child: Row(
-          children: [
-            //price
-            Container(
-              width: Get.width,
-              height: Get.height / 70,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(22)),
-                gradient: GradientColors.boxPrice,
-              ),
-              //price
-              child: const Text(
-                '360,000',
-                style: HomeStyle.price,
+      child: Row(
+        children: [
+          //icon buy
+          Container(
+            padding: EdgeInsets.all(Dimens.small / 2),
+            margin:
+                EdgeInsets.only(right: Get.width / 50, left: Get.width / 100),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white,
+            ),
+            child: Center(
+              child: SvgPicture.asset(
+                Assets.images.svg.basket,
+                fit: BoxFit.cover,
               ),
             ),
-            //icon buy
-            Container(
-              width: Get.width / 8,
-              height: Get.height / 80,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: Center(
-                child: SvgPicture.asset(
-                  Assets.images.svg.basket,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            )
-          ],
-        ),
+          ),
+          //price
+          Container(
+            width: Get.width / 5.34,
+            padding: EdgeInsets.only(
+              right: Dimens.small / 2,
+              top: Dimens.small / 2.5,
+              bottom: Dimens.small / 2.5,
+            ),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(22)),
+              gradient: GradientColors.boxPrice,
+            ),
+            //price
+            child: Text(
+              '360,000',
+              style: HomeStyle.price,
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
 class _Stars extends StatelessWidget {
-  const _Stars({
-    super.key,
-  });
+  const _Stars();
 
   @override
   Widget build(BuildContext context) {
@@ -163,14 +141,18 @@ class _Stars extends StatelessWidget {
       child: ListView.builder(
         itemCount: 5,
         scrollDirection: Axis.horizontal,
+        reverse: true,
         itemBuilder: (context, index) {
           return Container(
-            margin: const EdgeInsets.all(5),
+            margin: EdgeInsets.only(
+              bottom: Get.height / 100,
+              left: index == 0 ? Get.width / 8.9 : 2,
+            ),
             decoration: const ShapeDecoration(
               shape: StarBorder(
                 side: BorderSide(
                   color: Colors.orange,
-                  width: 5,
+                  width: 3,
                 ),
               ),
             ),

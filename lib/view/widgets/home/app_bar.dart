@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSize {
               right: Get.width / 16,
               top: Get.width / 30,
             ),
-            decoration:  BoxDecoration(
+            decoration:  const BoxDecoration(
               boxShadow: GeneralShadow.neomorphsBox,
               color: GeneralColors.backgroundPrimary,
               shape: BoxShape.circle,
@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSize {
               boxShadow: GeneralShadow.neomorphsBox,
               color: GeneralColors.backgroundPrimary,
             ),
-            child: const TextField(
+            child: TextField(
               decoration: InputDecoration(
                 hintText: 'جستجو...',
                 hintStyle: GeneralStyle.hintStyle,

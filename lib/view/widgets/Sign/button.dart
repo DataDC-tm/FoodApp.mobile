@@ -5,9 +5,10 @@ import '../../theme/colors/general_colors.dart';
 import '../../theme/styles/general_style.dart';
 
 class SignButton extends StatelessWidget {
+  SignButton._();
   SignButton({super.key, required this.title, required this.onpress});
   String title = 'ورود';
- void Function() onpress = () {};
+  void Function() onpress = () {};
   @override
   Widget build(BuildContext context) {
     return Container(
