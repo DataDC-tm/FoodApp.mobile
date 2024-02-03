@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../constant/dimens.dart';
@@ -18,8 +19,8 @@ class HomeCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return BoxBg(
       child: SizedBox(
-        width: Get.width,
-        height: Get.height / 12,
+        width: double.maxFinite,
+        height: 105.h,
         child: ListView.builder(
           itemCount: 4,
           itemExtent: Get.width / 5.38,
@@ -35,7 +36,7 @@ class HomeCategory extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.all(
-                    Radius.circular(Dimens.small)),
+                    Radius.circular(12.r)),
               ),
               child: Center(
                 child: Text(

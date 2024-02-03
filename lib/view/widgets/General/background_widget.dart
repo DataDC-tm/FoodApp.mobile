@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../constant/dimens.dart';
@@ -21,7 +22,7 @@ class BoxBg extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: GeneralShadow.neomorphsBox,
         color: GeneralColors.backgroundPrimary,
-        borderRadius: BorderRadius.all(Radius.circular(Get.width / 20)),
+        borderRadius: BorderRadius.all(Radius.circular(45.r)),
       ),
       child: child,
     );

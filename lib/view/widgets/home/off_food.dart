@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app/constant/dimens.dart';
 import 'package:food_app/constant/extensions.dart';
@@ -34,12 +35,12 @@ class HomeOffFood extends StatelessWidget {
               top: Get.height / 17,
               left: Get.width / 25,
               child: Container(
-                width: Get.width / 3.2,
+                width: 230.w,
                 height: Get.height / 5.2,
                 decoration: BoxDecoration(
                     color: GeneralColors.backgroundPrimary,
                     borderRadius:
-                        BorderRadius.all(Radius.circular(Get.width / 40))),
+                        BorderRadius.all(Radius.circular(14.r))),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -61,9 +62,9 @@ class HomeOffFood extends StatelessWidget {
             ),
             //image food in top cart
             Positioned(
-              left: Get.width / 9.5,
+              left: Get.width / 9,
               child: Container(
-                width: Get.width / 5.5,
+                width: 135.w,
                 decoration: const ShapeDecoration(
                   color: Color(0xFFFDAB21),
                   shape: OvalBorder(),
@@ -86,7 +87,7 @@ class _BoxPrice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: Get.height / 22,
+      height: 60.h,
       color: GeneralColors.primary,
       child: Row(
         children: [
@@ -94,7 +95,7 @@ class _BoxPrice extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(Dimens.small / 2),
             margin:
-                EdgeInsets.only(right: Get.width / 50, left: Get.width / 100),
+                EdgeInsets.only(right: 10.w, left: 8.w),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white,
@@ -108,14 +109,14 @@ class _BoxPrice extends StatelessWidget {
           ),
           //price
           Container(
-            width: Get.width / 5.34,
+            width: 172.w,
             padding: EdgeInsets.only(
               right: Dimens.small / 2,
               top: Dimens.small / 2.5,
               bottom: Dimens.small / 2.5,
             ),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(22)),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(32.r)),
               gradient: GradientColors.boxPrice,
             ),
             //price
@@ -145,8 +146,8 @@ class _Stars extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.only(
-              bottom: Get.height / 100,
-              left: index == 0 ? Get.width / 8.9 : 2,
+              bottom: 10.h,
+              left: index == 0 ? 80.w : 2,
             ),
             decoration: const ShapeDecoration(
               shape: StarBorder(

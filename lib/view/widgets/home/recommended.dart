@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/constant/dimens.dart';
 import 'package:food_app/constant/extensions.dart';
 import 'package:food_app/gen/assets.gen.dart';
@@ -19,7 +20,6 @@ class RecommendedFood extends StatelessWidget {
   Widget build(BuildContext context) {
     return BoxBg(
       child: SizedBox(
-        width: Get.width / 2,
         height: Get.height,
         child: ListView.builder(
           physics: const ClampingScrollPhysics(),
@@ -28,7 +28,7 @@ class RecommendedFood extends StatelessWidget {
             //Cart food
             return Container(
               width: double.maxFinite,
-              height: Get.height / 5,
+              height: 240.h,
               margin: EdgeInsets.only(bottom: Dimens.small),
               padding: EdgeInsets.all(Dimens.small),
               decoration: BoxDecoration(
@@ -44,7 +44,7 @@ class RecommendedFood extends StatelessWidget {
                         Assets.images.png.home.rectangle.path,
                       ),
                     ), //title
-              
+
                     Padding(
                       padding: EdgeInsets.only(
                         right: Dimens.small,
@@ -54,13 +54,13 @@ class RecommendedFood extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           //title
-                           Text(
+                          Text(
                             'میکس سنتی',
                             style: HomeStyle.recommendedTitle,
                           ),
                           Dimens.small.height,
                           //description
-                           Text(
+                          Text(
                             '''این پیشنهاد خوشمزه سان دی رو نادیده نگیرین!
 میکس چنجه ، کباب گوشت 200 گرمی ،
 جوجه کباب طعم دار شده
@@ -74,13 +74,13 @@ class RecommendedFood extends StatelessWidget {
                           Dimens.large.height,
                           //button for buy product
                           Container(
-                            width: Get.width / 6,
-                            height: Get.height / 30,
-                            margin:  EdgeInsets.only(right: Get.width / 2.6),
+                            width: 150.w,
+                            height: 60.h,
+                            margin: EdgeInsets.only(right: Get.width / 2),
                             decoration: BoxDecoration(
                               color: GeneralColors.primary,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(Dimens.large)),
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(1000.r)),
                             ),
                             child: ElevatedButton(
                               onPressed: () {},
@@ -88,12 +88,13 @@ class RecommendedFood extends StatelessWidget {
                                 padding:
                                     MaterialStatePropertyAll(EdgeInsets.zero),
                                 elevation: MaterialStatePropertyAll(0.0),
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.transparent),
+                                backgroundColor: MaterialStatePropertyAll(
+                                    Colors.transparent),
                               ),
                               child: Text(
                                 'مشاهده',
-                                style: GeneralStyle.button.copyWith(fontSize: 10),
+                                style:
+                                    GeneralStyle.button.copyWith(fontSize: 10),
                               ),
                             ),
                           ),

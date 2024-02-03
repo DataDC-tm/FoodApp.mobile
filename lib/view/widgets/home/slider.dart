@@ -1,5 +1,6 @@
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,7 @@ class HomeSlider extends StatelessWidget {
             image: AssetImage(Assets.images.png.home.backSlider.path),
             fit: BoxFit.fill,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(Get.width / 20)),
+          borderRadius: BorderRadius.all(Radius.circular(18.r)),
         ),
         child: SvgPicture.asset(
           Assets.images.svg.slider,

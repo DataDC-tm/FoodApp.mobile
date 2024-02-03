@@ -12,7 +12,7 @@ class GeneralStyle {
       color: Colors.white);
   static TextStyle hintStyle = TextStyle(
     fontFamily: 'vazir_medium',
-    fontSize: 26.sp,
+    fontSize: 25.sp,
     fontWeight: FontWeight.w700,
     color: GeneralColors.primary,
   );

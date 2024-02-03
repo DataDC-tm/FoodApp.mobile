@@ -6,7 +6,7 @@ import '../colors/general_colors.dart';
 class HomeStyle {
   static TextStyle categoryTitle = TextStyle(
     color: Color(0xFFFDAB21),
-    fontSize: 20.sp,
+    fontSize: 18.sp,
     fontFamily: 'vazir_medium',
     fontWeight: FontWeight.w700,
   );
